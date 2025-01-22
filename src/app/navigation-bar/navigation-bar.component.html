@@ -1,0 +1,42 @@
+<ul class="nav flex-column">
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [ngClass]="{'clicked': activeLink === 'home'}"  
+        [routerLink]="['/']" 
+        routerLinkActive="active" 
+        (click)="setActiveLink('home')" 
+        aria-current="page"
+      >
+        Skills
+      </a>
+    </li>
+    <li class="nav-item">
+      <a 
+      class="nav-link" 
+      [ngClass]="{'clicked': activeLink === '/projects'}"  
+      [routerLink]="['/projects']" 
+      routerLinkActive="active" 
+      (click)="setActiveLink('/projects')" 
+      aria-current="page"
+      >
+      Projects
+    </a>
+  </li>
+  <li class="nav-item">
+    <a 
+      class="nav-link" 
+      [ngClass]="{'clicked': activeLink === '/about'}"  
+      [routerLink]="['/about']" 
+      routerLinkActive="active" 
+      (click)="setActiveLink('/about')" 
+      aria-current="page"
+    >
+      About
+    </a>
+  </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" aria-disabled="true">Upcoming</a>
+    </li>
+  </ul>
+  

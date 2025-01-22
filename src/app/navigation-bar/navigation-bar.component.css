@@ -1,0 +1,4 @@
+.clicked {
+    color: var(--bs-warning); /* Use var() to reference the CSS variable */
+    font-weight: bold; /* Optional additional styling */
+  }
