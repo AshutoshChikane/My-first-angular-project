@@ -25,7 +25,17 @@ export class NavigationBarComponent implements OnInit {
     // Subscribe to the router's events to get the full URL
     this.router.events.subscribe(event => {
         let path = this.location.path();
-        let result: string =  (path === "home" || path === "/projects" || path === "/about") ? path : "home";;
+        let result: string;
+        // let result: string =  (path === "home" || path === "/projects" || path === "/about") ? path : "home";
+        if (path.includes('projects')){
+          result = '/projects'
+        }
+        else if (path.includes('/about')){
+          result = '/about'
+        }
+        else {
+          result = 'home'
+        }
         // console.log('Current URL:', result);
         this.setActiveLink(result);
       
