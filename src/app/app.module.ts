@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { TodoListProjectModule } from './todo-list-project/todo-list-project.module'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TodoListProjectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
