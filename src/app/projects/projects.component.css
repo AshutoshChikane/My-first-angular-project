@@ -5,3 +5,7 @@
 .border_effect_out {
     border-radius: 10px;
 }
+
+.dd:hover{
+    color: white;
+} 
