@@ -9,6 +9,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { TodoListProjectModule } from './todo-list-project/todo-list-project.module'
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TodoListProjectModule } from './todo-list-project/todo-list-project.mod
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TodoListProjectModule
+    TodoListProjectModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
