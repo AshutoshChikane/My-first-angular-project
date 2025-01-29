@@ -10,6 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { TodoListProjectModule } from './todo-list-project/todo-list-project.module'
 import { CommonModule } from '@angular/common';
+import { UserManagementModule } from './user-management/user-management.module'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     TodoListProjectModule,
-    CommonModule
+    CommonModule,
+    UserManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

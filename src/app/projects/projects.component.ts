@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +13,15 @@ import { Router } from '@angular/router';
 export class ProjectsComponent {
   constructor(private router: Router){}
 
+  showUserManagement = false;
+
   directToPage(path_variable: string){
-    this.router.navigate(['projects/todo'])
+    this.router.navigate([path_variable])
   }
+
+  showUserManagementPage() {
+    console.log('helo')
+    this.showUserManagement = true;
+  }
+
 }
