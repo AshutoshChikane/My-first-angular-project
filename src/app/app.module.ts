@@ -11,6 +11,9 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { TodoListProjectModule } from './todo-list-project/todo-list-project.module'
 import { CommonModule } from '@angular/common';
 import { UserManagementModule } from './user-management/user-management.module'
+import { provideHttpClient } from '@angular/common/http';
+import { UserServiceService } from './my-service/user-data-service/user-service.service';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { UserManagementModule } from './user-management/user-management.module'
     CommonModule,
     UserManagementModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,22 @@
 <p>view-user works!</p>
+
+
+<table class="table table-secondary table-striped">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let ii of dataa">
+        <tr>
+            <th scope="row">{{ii.id}}</th>
+            <td>{{ii.name}}</td>
+            <td>{{ii.phone}}</td>
+            <td>{{ii.email}}</td>
+        </tr>
+            
+        </tbody>
+</table>
