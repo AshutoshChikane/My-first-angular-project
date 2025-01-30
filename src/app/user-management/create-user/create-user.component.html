@@ -1,1 +1,18 @@
 <p>create-user works!</p>
+
+<form (ngSubmit)="onSubmit(userdataForm.value)" #userdataForm="ngForm">
+    <div class="mb-1 text-start">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" id="name1" [(ngModel)]="task.name" required>
+      </div>
+      <div class="mb-1 text-start">
+        <label for="exampleInputEmail1" class="form-label">Phone No.</label>
+        <input type="tel" name="phone" class="form-control" id="phone2" [(ngModel)]="task.phone" pattern="^[0-9]*$" required>
+      </div>
+      
+    <div class="mb-1 text-start">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" class="form-control" id="email3" [(ngModel)]="task.email" required>
+    </div>
+    <button type="submit" [disabled]="!userdataForm.valid" class="btn btn-success m-4">Success</button>
+</form>
