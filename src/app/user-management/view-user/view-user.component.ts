@@ -10,6 +10,7 @@ export interface data_user {
   }
 
 
+
 @Component({
   selector: 'app-view-user',
   standalone: false,
@@ -17,6 +18,8 @@ export interface data_user {
   templateUrl: './view-user.component.html',
   styleUrl: './view-user.component.css'
 })
+
+
 export class ViewUserComponent {
   dataa: data_user[] = [];
   constructor(private my_data: UserServiceService){}

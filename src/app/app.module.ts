@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 import { UserManagementModule } from './user-management/user-management.module'
 import { provideHttpClient } from '@angular/common/http';
 import { UserServiceService } from './my-service/user-data-service/user-service.service';
+import { CsvHandlerComponent } from './csv-handler/csv-handler.component';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { UserServiceService } from './my-service/user-data-service/user-service.
     HeaderComponent,
     NavigationBarComponent,
     ProjectsComponent,
-    AboutPageComponent
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,

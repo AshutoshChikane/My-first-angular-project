@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { FormsModule } from '@angular/forms';
+import { CsvHandlerComponent } from '../csv-handler/csv-handler.component'
 
 
 
@@ -10,11 +11,15 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     CreateUserComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    CsvHandlerComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+  ],
+  exports: [
+    CsvHandlerComponent
   ]
 })
 export class UserManagementModule { }
