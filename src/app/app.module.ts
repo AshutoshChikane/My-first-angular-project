@@ -13,8 +13,8 @@ import { CommonModule } from '@angular/common';
 import { UserManagementModule } from './user-management/user-management.module'
 import { provideHttpClient } from '@angular/common/http';
 import { ChartProjectModule } from './chart-project/chart-project.module';
-
-import { ApexAxisChartSeries, } from 'ng-apexcharts'
+// import { RouterModule } from '@angular/router';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,9 @@ import { ApexAxisChartSeries, } from 'ng-apexcharts'
     TodoListProjectModule,
     CommonModule,
     UserManagementModule,
-    ChartProjectModule
+    ChartProjectModule,
+    // RouterModule,
+    NgApexchartsModule
   ],
   exports:[
   ],
