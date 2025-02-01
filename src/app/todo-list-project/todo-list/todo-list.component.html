@@ -1,5 +1,5 @@
 <h4>Welcome ToDO List Project</h4>
-
+<app-csv-handler [data]="todo_list" [filename]="'Todo_list.csv'"></app-csv-handler>
 <form (ngSubmit)="onSubmit(taskForm.value)" #taskForm="ngForm">
     <div class="mb-1">
         <label for="exampleFormControlInput1" class="form-label" style="text-align: left; display: block;">Title</label>

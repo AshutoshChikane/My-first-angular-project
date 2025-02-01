@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { FormsModule } from '@angular/forms';
-import { CsvHandlerComponent } from '../csv-handler/csv-handler.component'
+import { SharedModule } from '../shared/shared.module'
 
 
 
@@ -12,14 +12,13 @@ import { CsvHandlerComponent } from '../csv-handler/csv-handler.component'
   declarations: [
     CreateUserComponent,
     ViewUserComponent,
-    CsvHandlerComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule
   ],
   exports: [
-    CsvHandlerComponent
   ]
 })
 export class UserManagementModule { }

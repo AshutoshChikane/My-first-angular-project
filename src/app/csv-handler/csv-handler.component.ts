@@ -10,10 +10,11 @@ import { CsvHandleServiceService } from '../my-service/csv-handler/csv-handle-se
 })
 export class CsvHandlerComponent {
   @Input() data!: any[];
+  @Input() filename!: string;
 
   constructor(private mycsv_handler:CsvHandleServiceService){}
   downloadCsvClick(): void{
-    console.log("helo", this.data)
-    this.mycsv_handler.downloadCsv(this.data, "my_first_export.csv")
+    console.log("helo", this.data, this.filename)
+    this.mycsv_handler.downloadCsv(this.data, this.filename)
   }
 }
