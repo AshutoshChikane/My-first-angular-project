@@ -1,5 +1,9 @@
-<div id="chart">
-    <h1>Hi</h1>
+<div>
+    <button (click)="showData()" type="button" class="btn btn-primary btn-lg m-3">Data</button>
+    <button (click)="showChart()" type="button" class="btn btn-light btn-lg m-3">Chart</button>
+</div>
+
+<div *ngIf = "chartShow" id="chart">
     <apx-chart
       #chart
       [series]="chartOptions.series"

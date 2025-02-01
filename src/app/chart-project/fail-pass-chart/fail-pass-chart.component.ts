@@ -44,7 +44,7 @@ export class FailPassChartComponent {
         data: [44, 55, 57, 56, 61, 58, 63, 60, 111]
       },
       {
-        name: "Revenue",
+        name: "Pass",
         data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
       },
       {
@@ -78,7 +78,7 @@ export class FailPassChartComponent {
     },
     yaxis: {
       title: {
-        text: "$ (thousands)"
+        text: "(Cases)"
       }
     },
     fill: {
@@ -87,7 +87,7 @@ export class FailPassChartComponent {
     tooltip: {
       y: {
         formatter: function(val) {
-          return "$ " + val + " thousands";
+          return val + " Cases";
         }
       }
     },
@@ -109,6 +109,29 @@ export class FailPassChartComponent {
   };
 
   constructor() {
-    // chartOptions is now fully populated at initialization, no need for Partial<ChartOptions>
+  this.chartOptions.series = [
+      {
+        name: "Fail Case",
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 111]
+      },
+      {
+        name: "Pass Case",
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+      },
+      {
+        name: "Total Cases",
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 100]
+      }
+    ]
   }
+  chartShow = false
+  showData(){
+    console.log("SHOW DATA")
+    this.chartShow = false
+  }
+  showChart(){
+    console.log("SHOW Chart")
+    this.chartShow = true
+  }
+    // chartOptions is now fully populated at initialization, no need for Partial<ChartOptions>
 }
