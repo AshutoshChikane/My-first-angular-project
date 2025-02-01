@@ -12,8 +12,9 @@ import { TodoListProjectModule } from './todo-list-project/todo-list-project.mod
 import { CommonModule } from '@angular/common';
 import { UserManagementModule } from './user-management/user-management.module'
 import { provideHttpClient } from '@angular/common/http';
-import { UserServiceService } from './my-service/user-data-service/user-service.service';
+import { ChartProjectModule } from './chart-project/chart-project.module';
 
+import { ApexAxisChartSeries, } from 'ng-apexcharts'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserServiceService } from './my-service/user-data-service/user-service.
     AppRoutingModule,
     TodoListProjectModule,
     CommonModule,
-    UserManagementModule
+    UserManagementModule,
+    ChartProjectModule
   ],
   exports:[
   ],
