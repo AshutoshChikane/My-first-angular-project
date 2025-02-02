@@ -40,7 +40,7 @@ export interface dashboardInterface {
   styleUrls: ['./dashboard-main-page.component.css']
 })
 export class DashboardMainPageComponent {
-  @ViewChild("chart") chart!: ChartComponent;
+  // @ViewChild("chart") chart!: ChartComponent;
   // public chartOptions: Partial<ChartOptions>;
   showchart: boolean = false;
   data: { [month: string]: dashboardInterface[] } = {};
@@ -50,35 +50,9 @@ export class DashboardMainPageComponent {
   month3Data: dashboardInterface[] = [];
   selectedData: dashboardInterface[] = [];
   lastThreeMonths: string[] = [];
-
-  public chartOptions: ChartOptions = {
-    series: [],
-    chart: {
-      height: 250,
-      type: "treemap"
-    },
-    title: {
-      text: "Policy As Per Region"
-    },
-    dataLabels: {
-      enabled: true
-    },
-    plotOptions: {
-      treemap: {
-        distributed: false,
-        borderRadius: 2,
-        colorScale: {
-          ranges: [
-          { from: 10001, to: 20000, color: "#1E88E5" },
-          { from: 20001, to: 30000, color: "#0D47A1" },
-          ]
-        }
-      }
-    },
-    legend: {
-      show: true, // Initialize the legend
-    }
-  };
+  total_male = 0
+  total_female = 0
+  total_transgender = 0
 
 
   constructor(private my_api: DashboardServiceService)  { }
@@ -99,31 +73,8 @@ export class DashboardMainPageComponent {
       console.log("month2Data",this.month2Data)
       console.log("month3Data",this.month3Data)
       this.selectedData = this.month1Data
-      // this.chartData
-
-
-      this.chartOptions.series = [{
-        name: 'Month 1',  // Or whatever name you want for the month
-        data: this.month1Data.map(item => ({
-          x: item.city,  // City as x-axis
-          y: item.total_cases  // Total cases as y-axis
-        }))
-      }];
-
-  
-      // Map data to chart series in the correct format
-      // const chartData = this.months.map(month => {
-      //   return {
-      //     name: month, // Use month name as the series name
-      //     data: this.data[month].map(item => ({
-      //       x: item.city,  // City as x-axis
-      //       y: item.total_cases  // Total cases as y-axis
-      //     }))
-      //   };
-      // });
-  
-      // Update chartOptions.series with the new structured data
-      // this.chartOptions.series = chartData;
+      
+      
     });
   }
   getLastThreeMonths() {
@@ -152,33 +103,6 @@ export class DashboardMainPageComponent {
       this.selectedData = this.month2Data;
     } else if (selectedValue === '3') {
       this.selectedData = this.month3Data;
-    }
-  
-    // Assign data based on the selected month
-    if (selectedValue === '1') {
-      this.chartOptions.series = [{
-        name: 'Current Month',  
-        data: this.month1Data.map(item => ({
-          x: item.city,  // City as x-axis
-          y: item.total_cases  // Total cases as y-axis
-        }))
-      }];
-    } else if (selectedValue === '2') {
-      this.chartOptions.series = [{
-        name: 'Last 1st Month',  
-        data: this.month2Data.map(item => ({
-          x: item.city,  // City as x-axis
-          y: item.total_cases  // Total cases as y-axis
-        }))
-      }];
-    } else if (selectedValue === '3') {
-      this.chartOptions.series = [{
-        name: 'Last 2nd Month',  
-        data: this.month3Data.map(item => ({
-          x: item.city,  // City as x-axis
-          y: item.total_cases  // Total cases as y-axis
-        }))
-      }];
     }
   }
 }
