@@ -19,6 +19,12 @@ export type ChartOptions = {
   legend: ApexLegend;
 };
 
+interface MonthWiseTotals {
+  total_male: number;
+  total_female: number;
+  total_transgender: number;
+}
+
 export interface dashboardInterface {
   "city": string;
   "total_cases": number;
@@ -53,6 +59,7 @@ export class DashboardMainPageComponent {
   total_male = 0
   total_female = 0
   total_transgender = 0
+  month_wise_totals: { [month: string]: MonthWiseTotals } = {};  
 
 
   constructor(private my_api: DashboardServiceService)  { }
@@ -73,9 +80,31 @@ export class DashboardMainPageComponent {
       console.log("month2Data",this.month2Data)
       console.log("month3Data",this.month3Data)
       this.selectedData = this.month1Data
+      for (let month in this.data) {
+        if (this.data.hasOwnProperty(month)) {
+          let total_male = 0;
+          let total_female = 0;
+          let total_transgender = 0;
+  
+          // Loop through each city's data in the current month
+          let month_data = this.data[month];
+          for (let city_data of month_data) {
+            total_male += city_data.male_count;
+            total_female += city_data.female_count;
+            total_transgender += city_data.transgender_count;
+          }
+  
+          // Store the totals for the current month
+          this.month_wise_totals[month] = {
+            total_male: total_male,
+            total_female: total_female,
+            total_transgender: total_transgender
+          };
       
-      
-    });
+  }}
+  console.log(this.month_wise_totals)
+
+});
   }
   getLastThreeMonths() {
     const lastThree = this.months.slice(-3);  // Get last 3 months
