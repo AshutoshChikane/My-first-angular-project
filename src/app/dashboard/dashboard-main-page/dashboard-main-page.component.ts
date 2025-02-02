@@ -48,6 +48,7 @@ export class DashboardMainPageComponent {
   month1Data: dashboardInterface[] = [];
   month2Data: dashboardInterface[] = [];
   month3Data: dashboardInterface[] = [];
+  selectedData: dashboardInterface[] = [];
   lastThreeMonths: string[] = [];
 
   public chartOptions: ChartOptions = {
@@ -97,6 +98,9 @@ export class DashboardMainPageComponent {
       console.log("month1Data",this.month1Data)
       console.log("month2Data",this.month2Data)
       console.log("month3Data",this.month3Data)
+      this.selectedData = this.month1Data
+      // this.chartData
+
 
       this.chartOptions.series = [{
         name: 'Month 1',  // Or whatever name you want for the month
@@ -108,15 +112,15 @@ export class DashboardMainPageComponent {
 
   
       // Map data to chart series in the correct format
-      const chartData = this.months.map(month => {
-        return {
-          name: month, // Use month name as the series name
-          data: this.data[month].map(item => ({
-            x: item.city,  // City as x-axis
-            y: item.total_cases  // Total cases as y-axis
-          }))
-        };
-      });
+      // const chartData = this.months.map(month => {
+      //   return {
+      //     name: month, // Use month name as the series name
+      //     data: this.data[month].map(item => ({
+      //       x: item.city,  // City as x-axis
+      //       y: item.total_cases  // Total cases as y-axis
+      //     }))
+      //   };
+      // });
   
       // Update chartOptions.series with the new structured data
       // this.chartOptions.series = chartData;
@@ -141,6 +145,14 @@ export class DashboardMainPageComponent {
   changeMonth(event: any) {
     const selectedValue = event.target.value;
     console.log(`Selected Month: ${selectedValue}`);
+
+    if (selectedValue === '1') {
+      this.selectedData = this.month1Data;
+    } else if (selectedValue === '2') {
+      this.selectedData = this.month2Data;
+    } else if (selectedValue === '3') {
+      this.selectedData = this.month3Data;
+    }
   
     // Assign data based on the selected month
     if (selectedValue === '1') {
