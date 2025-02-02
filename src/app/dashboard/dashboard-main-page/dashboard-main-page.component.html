@@ -1,6 +1,11 @@
 <div class="button-container">
     <button *ngIf="showchart" (click)="showData()" type="button" class="btn btn-light btn-lg m-3 ">Data</button>
     <button *ngIf="!showchart" (click)="showChart()" type="button" class="btn btn-light btn-lg m-3 ">Chart</button>
+    <select *ngIf="showchart" (change)="changeMonth($event)" class="form-select" aria-label="Default select example">
+        <option  value="1">Current Month</option>
+        <option  value="2">Last 1st Month</option>
+        <option  value="3">Last 2nd Month</option>
+      </select>
 </div>
 
 <div *ngIf="!showchart">

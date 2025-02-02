@@ -68,7 +68,8 @@ export class DashboardMainPageComponent {
         borderRadius: 2,
         colorScale: {
           ranges: [
-            { from: 0, to: 1000, color: "#00A100" }
+          { from: 10001, to: 20000, color: "#1E88E5" },
+          { from: 20001, to: 30000, color: "#0D47A1" },
           ]
         }
       }
@@ -90,9 +91,9 @@ export class DashboardMainPageComponent {
       this.getLastThreeMonths();  // Get last 3 months for dynamic button creation
 
       // Store the data for the last 3 months in separate variables
-      this.month1Data = this.data[this.lastThreeMonths[0]] || [];
+      this.month1Data = this.data[this.lastThreeMonths[2]] || [];
       this.month2Data = this.data[this.lastThreeMonths[1]] || [];
-      this.month3Data = this.data[this.lastThreeMonths[2]] || [];
+      this.month3Data = this.data[this.lastThreeMonths[0]] || [];
       console.log("month1Data",this.month1Data)
       console.log("month2Data",this.month2Data)
       console.log("month3Data",this.month3Data)
@@ -134,5 +135,38 @@ export class DashboardMainPageComponent {
   showChart() {
     console.log("show chart");
     this.showchart = true;
+  }
+
+  
+  changeMonth(event: any) {
+    const selectedValue = event.target.value;
+    console.log(`Selected Month: ${selectedValue}`);
+  
+    // Assign data based on the selected month
+    if (selectedValue === '1') {
+      this.chartOptions.series = [{
+        name: 'Current Month',  
+        data: this.month1Data.map(item => ({
+          x: item.city,  // City as x-axis
+          y: item.total_cases  // Total cases as y-axis
+        }))
+      }];
+    } else if (selectedValue === '2') {
+      this.chartOptions.series = [{
+        name: 'Last 1st Month',  
+        data: this.month2Data.map(item => ({
+          x: item.city,  // City as x-axis
+          y: item.total_cases  // Total cases as y-axis
+        }))
+      }];
+    } else if (selectedValue === '3') {
+      this.chartOptions.series = [{
+        name: 'Last 2nd Month',  
+        data: this.month3Data.map(item => ({
+          x: item.city,  // City as x-axis
+          y: item.total_cases  // Total cases as y-axis
+        }))
+      }];
+    }
   }
 }
