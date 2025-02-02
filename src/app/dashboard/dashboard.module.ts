@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardMainPageComponent } from './dashboard-main-page/dashboard-main-page.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { RouterModule } from '@angular/router'; 
 
 
 
@@ -9,7 +11,9 @@ import { DashboardMainPageComponent } from './dashboard-main-page/dashboard-main
     DashboardMainPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgApexchartsModule,
+    RouterModule
   ]
 })
 export class DashboardModule { }
