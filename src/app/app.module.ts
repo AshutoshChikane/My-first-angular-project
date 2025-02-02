@@ -15,6 +15,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { ChartProjectModule } from './chart-project/chart-project.module';
 // import { RouterModule } from '@angular/router';
 import { NgApexchartsModule } from "ng-apexcharts";
+import { DashboardModule } from './dashboard/dashboard.module'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { NgApexchartsModule } from "ng-apexcharts";
     CommonModule,
     UserManagementModule,
     ChartProjectModule,
-    // RouterModule,
+    DashboardModule,
     NgApexchartsModule
   ],
   exports:[

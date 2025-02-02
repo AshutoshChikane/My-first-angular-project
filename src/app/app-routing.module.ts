@@ -7,7 +7,7 @@ import { TodoListComponent} from './todo-list-project/todo-list/todo-list.compon
 import { CreateUserComponent } from './user-management/create-user/create-user.component'
 import { ViewUserComponent } from './user-management/view-user/view-user.component'
 import { FailPassChartComponent } from './chart-project/fail-pass-chart/fail-pass-chart.component'
-
+import { DashboardMainPageComponent } from './dashboard/dashboard-main-page/dashboard-main-page.component'
 
 const routes: Routes = [
   {path:"", component:HomeComponent},
@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:"projects/user-list", component:ViewUserComponent},
   {path:"projects/user-create", component:CreateUserComponent},
   {path:"projects/chart", component:FailPassChartComponent},
+  {path:"projects/dashboard", component:DashboardMainPageComponent},
   {path:"**", component:HomeComponent},
 ];
 
