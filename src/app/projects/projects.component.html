@@ -1,36 +1,50 @@
 <div class="container text-center" style="height: 100%;" *ngIf="!showUserManagement">
     <div class="row justify-content-center align-items-center p-4 g-4">
         <div class="col-4 p-2">
-            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out">
+            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out mydiv">
                 <div  (click)="directToPage('projects/todo')" class="justify-content-center align-items-center border border-warning border p-2 m-4 bg-secondary border_effect dd" >
-                    <h4>ToDO List</h4>
+                    <div class="imagediv">
+                        <img class="myimage" src="https://cdni.iconscout.com/illustration/premium/thumb/todo-list-illustration-download-in-svg-png-gif-file-formats--checklist-task-food-drink-illustrations-2371075.png?f=webp" alt="">
+                    </div>
+                    <div class="headerdiv">
+                        <h4>ToDO List</h4>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-4 p-2">
-            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out">                
+            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out mydiv">                
                 <div (click)="showUserManagementPage()" class="justify-content-center align-items-center border border-warning border p-2 m-4 bg-secondary border_effect dd" >
-                    <h4>User Management</h4>
+                    <div class="imagediv">
+                        <img class="myimage" src="https://www.admitek.com/wp-content/uploads/2017/04/User.png" alt="">
+                    </div>
+                    <div class="headerdiv">
+                        <h4>User Management</h4>
+                    </div>
                 </div>
             </div>
-        </div><div class="col-4 p-2">
-            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out">
+        </div>
+        <div class="col-4 p-2">
+            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out mydiv">
                 <div (click)="directToPage('projects/chart')" class="justify-content-center align-items-center border border-warning border p-2 m-4 bg-secondary border_effect dd" >
-                    <h4>Chart Project</h4>
+                    <div class="imagediv">
+                        <img class="myimage" src="https://www.pngplay.com/wp-content/uploads/7/Business-Growth-Chart-Graph-Background-PNG-Image.png" alt="">
+                    </div>
+                    <div class="headerdiv">
+                        <h4>Chart Project</h4>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-4 p-2">
-            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out">
+            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out mydiv">
                 <div class="justify-content-center align-items-center border border-warning border p-2 m-4 bg-secondary border_effect dd" >
-                    <h4>Upcoming</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 p-2">
-            <div class="justify-content-center align-items-center border border-warning border bg-warning border_effect_out">
-                <div class="justify-content-center align-items-center border border-warning border p-2 m-4 bg-secondary border_effect dd" >
-                    <h4>Upcoming</h4>
+                    <div class="imagediv">
+                        <img class="myimage" src="https://infologia.in/Template/images/new-img/anadash13.png" alt="">
+                    </div>
+                    <div class="headerdiv">
+                        <h4>Dashboard Project</h4>
+                    </div>
                 </div>
             </div>
         </div>

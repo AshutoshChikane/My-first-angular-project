@@ -16,6 +16,32 @@
       [dataLabels]="chartOptions.dataLabels"
       [tooltip]="chartOptions.tooltip"
       [legend]="chartOptions.legend"
+      [colors]="chartOptions.colors"
     ></apx-chart>
+  </div>
+
+  <div *ngIf = "!chartShow">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Year</th>
+            <th scope="col">Month</th>
+            <th scope="col">Total Pass</th>
+            <th scope="col">Total Fail</th>
+            <th scope="col">Total Records</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let each_data of dataa; let i = index">
+          <tr>
+            <th scope="row">{{i+1}}</th>
+            <td>{{each_data.year}}</td>
+            <td>{{each_data.month}}</td>
+            <td>{{each_data.total_passed}}</td>
+            <td>{{each_data.total_failed}}</td>
+            <td>{{each_data.total_records}}</td>
+          </tr>
+        </tbody>
+      </table>
   </div>
   
