@@ -1,71 +1,68 @@
 <div class="button-container">
-    <button *ngIf="showchart" (click)="showData()" type="button" class="btn btn-light btn-lg m-3 ">Data</button>
-    <button *ngIf="!showchart" (click)="showChart()" type="button" class="btn btn-light btn-lg m-3 ">Chart</button>
+    <button *ngIf="showchart" (click)="showData()" type="button" class="btn btn-light m-3 ">Data</button>
+    <button *ngIf="!showchart" (click)="showChart()" type="button" class="btn btn-light m-3 ">Chart</button>
     <select *ngIf="showchart" (change)="changeMonth($event)" class="form-select" aria-label="Default select example">
-        <option  value="1">Current Month</option>
-        <option  value="2">Last 1st Month</option>
-        <option  value="3">Last 2nd Month</option>
-      </select>
+        <option value="1">Current Month</option>
+        <option value="2">Last 1st Month</option>
+        <option value="3">Last 2nd Month</option>
+    </select>
 </div>
 
 <div *ngIf="!showchart">
     <div *ngFor="let month of months">
         <h3>{{ month }}</h3>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>City</th>
-              <th>Total Cases</th>
-              <th>Smoker Count</th>
-              <th>Non Smoker Count</th>
-              <th>Male Count</th>
-              <th>Female Count</th>
-              <th>Transgender Count</th>
-              <th>Pass Case</th>
-              <th>Fail Case</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let record of data[month]">
-              <td>{{ record.city }}</td>
-              <td>{{ record.total_cases }}</td>
-              <td>{{ record.smoker_count }}</td>
-              <td>{{ record.non_smoker_count }}</td>
-              <td>{{ record.male_count }}</td>
-              <td>{{ record.female_count }}</td>
-              <td>{{ record.transgender_count }}</td>
-              <td>{{ record.pass_case }}</td>
-              <td>{{ record.fail_case }}</td>
-              <td>{{ record.date }}</td>
-            </tr>
-          </tbody>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">City</th>
+                    <th scope="col">Total Cases</th>
+                    <th scope="col">Smoker Count</th>
+                    <th scope="col">Non Smoker Count</th>
+                    <th scope="col">Male Count</th>
+                    <th scope="col">Female Count</th>
+                    <th scope="col">Transgender Count</th>
+                    <th scope="col">Pass Case</th>
+                    <th scope="col">Fail Case</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of data[month]">
+                    <td>{{ record.city }}</td>
+                    <td>{{ record.total_cases }}</td>
+                    <td>{{ record.smoker_count }}</td>
+                    <td>{{ record.non_smoker_count }}</td>
+                    <td>{{ record.male_count }}</td>
+                    <td>{{ record.female_count }}</td>
+                    <td>{{ record.transgender_count }}</td>
+                    <td>{{ record.pass_case }}</td>
+                    <td>{{ record.fail_case }}</td>
+                    <td>{{ record.date }}</td>
+                </tr>
+            </tbody>
         </table>
-      </div>
+    </div>
 </div>
 
 <div *ngIf="showchart" class="container">
     <div class="row main-block">
-      <div class="col-6 main-block">
-        <div id="chart">
-            <apx-chart
-              [series]="chartOptions.series"
-              [chart]="chartOptions.chart"
-              [dataLabels]="chartOptions.dataLabels"
-              [plotOptions]="chartOptions.plotOptions"
-              [title]="chartOptions.title"
-              [legend]="chartOptions.legend"
-            ></apx-chart>
-          </div>
-      </div>
-      <div class="col-6 main-block">
-        Column
-      </div>
-      <div class="col-6 main-block">
-        Column
-      </div>
-      <div class="col-6 main-block">
-        Column
-      </div>
+        <div class="col-6 main-block">
+            Column
+        </div>
+        <div class="col-6 main-block">
+
+            <div id="chart">
+                <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart"
+                    [dataLabels]="chartOptions.dataLabels" [plotOptions]="chartOptions.plotOptions"
+                    [title]="chartOptions.title" [legend]="chartOptions.legend"></apx-chart>
+            </div>
+        </div>
+
+        <div class="col-6 main-block">
+            Column
+        </div>
+        <div class="col-6 main-block">
+            Column
+        </div>
     </div>
-  </div>
+</div>
