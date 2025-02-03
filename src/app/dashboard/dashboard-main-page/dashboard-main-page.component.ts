@@ -24,6 +24,11 @@ interface MonthWiseTotals {
   total_female: number;
   total_transgender: number;
 }
+export interface genderDataInterface {
+  total_female: number;
+  total_male: number;
+  total_transgender: number;
+}
 
 export interface dashboardInterface {
   "city": string;
@@ -55,6 +60,9 @@ export class DashboardMainPageComponent {
   month2Data: dashboardInterface[] = [];
   month3Data: dashboardInterface[] = [];
   selectedData: dashboardInterface[] = [];
+  genderData: genderDataInterface= {total_male: 0,
+    total_female: 0,
+    total_transgender: 0}
   lastThreeMonths: string[] = [];
   total_male = 0
   total_female = 0
@@ -103,6 +111,12 @@ export class DashboardMainPageComponent {
       
   }}
   console.log(this.month_wise_totals)
+  const firstMonth = this.months[0]
+  const seconfMonth = this.months[1]
+  const thirdMonth = this.months[2]
+
+  this.genderData = this.month_wise_totals[firstMonth]
+  console.log(this.genderData,"genderData")
 
 });
   }
@@ -128,10 +142,15 @@ export class DashboardMainPageComponent {
 
     if (selectedValue === '1') {
       this.selectedData = this.month1Data;
+      this.genderData = this.month_wise_totals[this.months[0]]
     } else if (selectedValue === '2') {
       this.selectedData = this.month2Data;
+      this.genderData = this.month_wise_totals[this.months[1]]
+
     } else if (selectedValue === '3') {
       this.selectedData = this.month3Data;
+      this.genderData = this.month_wise_totals[this.months[2]]
+
     }
   }
 }

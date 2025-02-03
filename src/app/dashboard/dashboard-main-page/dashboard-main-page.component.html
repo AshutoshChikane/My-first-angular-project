@@ -50,16 +50,14 @@
             Column
         </div>
         <div class="col-6 main-block">
-
-            <div id="chart">
-            </div>
+            Column
         </div>
-
         <div class="col-6 main-block">
             <app-tree-chart [chartData]="selectedData"></app-tree-chart>
         </div>
         <div class="col-6 main-block">
-            Column
+            <app-pie-chart [chartData] = "genderData"></app-pie-chart>
         </div>
+        
     </div>
 </div>
