@@ -38,3 +38,8 @@ app-tree-chart {
     height: 100%;
     display: block; /* Ensure block-level behavior */
 }
+
+.blockdiv{
+    display: flex;
+    flex-direction: column;
+}

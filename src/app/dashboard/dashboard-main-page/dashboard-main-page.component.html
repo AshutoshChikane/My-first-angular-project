@@ -47,10 +47,14 @@
 <div *ngIf="showchart" class="container">
     <div class="row main-block">
         <div class="col-6 main-block">
-            Column
+            <div class="blockdiv">
+                <h3>Chart Information</h3><br>
+                <h5>Name: Xyz</h5><br>
+                <h5>Time: 04-02-2025</h5><br>
+            </div>
         </div>
         <div class="col-6 main-block">
-            Column
+            <app-chart-bar [chartData]="data"></app-chart-bar>
         </div>
         <div class="col-6 main-block">
             <app-tree-chart [chartData]="selectedData"></app-tree-chart>
